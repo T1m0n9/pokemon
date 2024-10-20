@@ -5,11 +5,11 @@ from telebot.types import Message
 
 from logic import Pokemon,Wizard,Fighter
 ------------------------------------------
-tg token bot
+# tg token bot
 bot = telebot.TeleBot(token) 
 ------------------------------------------
 --------------------------------------------------------------------------------
-тг бот команда
+# Команды для бота 
 @bot.message_handler(commands=['info'])
 def info(message:Message):
     if message.from_user.username in Pokemon.pokemons.keys():
