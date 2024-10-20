@@ -4,11 +4,11 @@ from config import token
 from telebot.types import Message
 
 from logic import Pokemon,Wizard,Fighter
-------------------------------------------
+#------------------------------------------
 # tg token bot
 bot = telebot.TeleBot(token) 
-------------------------------------------
---------------------------------------------------------------------------------
+#------------------------------------------
+#--------------------------------------------------------------------------------
 #тг бот команда
 @bot.message_handler(commands=['info'])
 def info(message:Message):
@@ -17,7 +17,7 @@ def info(message:Message):
         bot.send_message(message.chat.id, pok.info())
     else:
         bot.reply_to('Для начала создайте покемона командо /go')
----------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------
 @bot.message_handler(commands=['feed'])
 def feed(message:Message):
     if message.from_user.username in Pokemon.pokemons.keys():
@@ -26,7 +26,7 @@ def feed(message:Message):
     else:
         bot.reply_to('Для начала создайте покемона командо /go')
 
------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
 @bot.message_handler(commands=['go'])
 def go(message:Message):
     if message.from_user.username not in Pokemon.pokemons.keys():
@@ -42,7 +42,7 @@ def go(message:Message):
     else:
         bot.reply_to(message, "Ты уже создал себе покемона")
 
-------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
 @bot.message_handler(commands=['attack'])
 def attack(message:Message):
     if not message.reply_to_message:
@@ -59,6 +59,6 @@ def attack(message:Message):
     res = pok.attack(enemy)
     bot.send_message(message.chat.id, res)
 
------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------
 bot.infinity_polling(none_stop=True)
------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------
