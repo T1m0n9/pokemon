@@ -15,4 +15,4 @@
  
 - [**Python Telegram bot api**](https://pythonrepo.com/repo/eternnoir-pyTelegramBotAPI-python-third-party-apis-wrappers)
 
-- #My Discord - 12veseliy12 
+- __My Discord - 12veseliy12__ 
